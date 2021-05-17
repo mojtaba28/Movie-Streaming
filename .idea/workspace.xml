@@ -21,7 +21,6 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[127.0.0.1:62001]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -52,7 +51,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1lQm21K40OF2jLHyIUUAb7ICpq1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -60,6 +63,7 @@
   <component name="PropertiesComponent">
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_2_API_27" />
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-01-07T23:09:28.841Z" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android-custom-viewE:/AndroidStudioProjects2/MovieStreaming/app/src/main/java/com/example/moviestreaming/Utils/FontText.java_SELECTED" value="FontText" />
     <property name="android.project.structure.last.selected" value="SDK Location" />
@@ -67,7 +71,7 @@
     <property name="android.sdk.path" value="$PROJECT_DIR$/../../sdk" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/android" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="multi-representation-previewE:/AndroidStudioProjects2/MovieStreaming/app/src/main/java/com/example/moviestreaming/Utils/FontText.java_selected" value="Custom views" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.17" />
@@ -207,7 +211,19 @@
       <option name="presentableId" value="Default" />
       <updated>1607537478218</updated>
     </task>
+    <task id="LOCAL-00001" summary="initial commit">
+      <created>1621256774075</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1621256774075</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="488" y="48" key="#com.intellij.ide.util.MemberChooser" timestamp="1621169436518">
@@ -246,6 +262,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="528" y="171" key="AndroidCreateXmlResourceDialog/0.0.1366.728@0.0.1366.728" timestamp="1620670140785" />
+    <state x="310" y="0" key="CommitChangelistDialog2" timestamp="1621256772524">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="310" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1621256772524" />
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1621255861951">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -270,6 +290,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1615800607845" />
+    <state x="275" y="84" key="Vcs.Push.Dialog.v2" timestamp="1621257076157">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="84" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1621257076157" />
     <state x="499" y="142" key="chooseDestDirectoryDialog" timestamp="1620847065310">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
