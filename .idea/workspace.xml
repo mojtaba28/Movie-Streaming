@@ -15,7 +15,9 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b9bb7c9-e708-48b5-b1e5-2042816a26a0" name="Default Changelist" comment="" />
+    <list default="true" id="2b9bb7c9-e708-48b5-b1e5-2042816a26a0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -218,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621256774075</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="initial commit">
+      <created>1621257095628</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1621257095628</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -262,10 +271,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="528" y="171" key="AndroidCreateXmlResourceDialog/0.0.1366.728@0.0.1366.728" timestamp="1620670140785" />
-    <state x="310" y="0" key="CommitChangelistDialog2" timestamp="1621256772524">
+    <state x="310" y="0" key="CommitChangelistDialog2" timestamp="1621257094882">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="310" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1621256772524" />
+    <state x="310" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1621257094882" />
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1621255861951">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
