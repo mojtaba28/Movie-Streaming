@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.LoginActivity"
+    android:background="@color/colorPrimary">
+
+    <include layout="@layout/toolbar"
+        android:id="@+id/toolbarLayout"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarLayout">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="@string/login_with_phone"
+            android:textColor="@color/white"
+            android:lineSpacingExtra="8dp"
+            android:textSize="20dp"
+            android:fontFamily="@font/helvetica_bold"
+            android:layout_margin="20dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bodyLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/top_rounded_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerLayout"
+        >
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textField_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:hint="@string/phone"
+            android:layout_margin="20dp"
+            android:textColorHint="@color/gray"
+            android:focusableInTouchMode="true"
+            app:hintTextAppearance="@style/TextAppearance.Design.Hint"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edt_phone"
+                android:background="@drawable/edittext_bg"
+                android:padding="10dp"
+                android:fontFamily="@font/helvetica"
+                android:inputType="phone"
+                android:textColor="@color/white"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textField_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/textField_phone"
+            android:hint="@string/password"
+            android:layout_margin="20dp"
+            android:textColorHint="@color/gray"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/white"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_bg"
+                android:fontFamily="@font/helvetica"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:textColor="@color/white" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textField_password"
+            android:layout_marginTop="40dp"
+            android:text="@string/login"
+            android:background="@drawable/button_bg1">
+
+
+        </Button>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_notHaveAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/btn_login"
+            android:text="@string/dont_have_an_account"
+            android:textColor="@color/white"
+            android:fontFamily="@font/helvetica"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="20dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/helvetica_bold"
+            android:text="@string/register"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_notHaveAccount"
+            app:layout_constraintStart_toEndOf="@+id/tv_notHaveAccount"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_forgot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_notHaveAccount"
+            android:text="@string/forgot_password"
+            android:textColor="@color/white"
+            android:fontFamily="@font/helvetica"
+            android:textSize="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="20dp"/>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animProgress"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:lottie_speed="1"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_forgot"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            android:visibility="gone"
+            app:lottie_rawRes="@raw/loading3"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

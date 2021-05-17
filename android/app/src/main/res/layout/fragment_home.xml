@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:attrs="http://schemas.android.com/tools">
+
+
+        <com.baoyz.widget.PullRefreshLayout
+            android:id="@+id/swipeRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            >
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimaryDark">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/viewpager"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp" />
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/animProgress"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        app:lottie_speed="1"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/loading3"
+                        app:layout_constraintBottom_toBottomOf="@+id/viewpager"
+                        android:layout_marginTop="10dp"/>
+
+
+                    <com.rd.PageIndicatorView
+                        android:id="@+id/pageIndicatorView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@id/viewpager"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginBottom="10dp"
+                        app:piv_radius="4dp"
+                        app:piv_selectedColor="@color/colorAccent"
+                        app:piv_viewPager="@id/viewpager"
+                        attrs:piv_padding="10dp" />
+
+
+                    <RelativeLayout
+                        android:id="@+id/genreLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/viewpager"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="8dp">
+
+                        <TextView
+
+                            android:id="@+id/tv_genre"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginStart="5dp"
+                            android:background="@drawable/rounded_text_bg"
+                            android:fontFamily="@font/nexa_bold"
+                            android:padding="5dp"
+                            android:text="@string/genre"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_more_genre"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="5dp"
+                            android:fontFamily="@font/nexa_bold"
+                            android:text="@string/more"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+
+                    </RelativeLayout>
+
+                    <com.mlsdev.animatedrv.AnimatedRecyclerView
+                        android:id="@+id/genre_recyclerview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layoutManagerType="grid"
+                        app:animationDuration="600"
+                        app:layoutAnimation="@anim/layout_animation_from_bottom_scale"
+                        app:layoutManagerReverse="true"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/genreLayout"
+                        android:layout_margin="@dimen/recyclerview_margin" />
+
+
+                    <RelativeLayout
+                        android:id="@+id/imdbTitleLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/genre_recyclerview"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp">
+
+                        <TextView
+                            android:id="@+id/tv_Imdb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginStart="5dp"
+                            android:background="@drawable/rounded_text_bg"
+                            android:fontFamily="@font/nexa_bold"
+                            android:padding="5dp"
+                            android:text="@string/top_imdb"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_moreTopIMDB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="5dp"
+                            android:fontFamily="@font/nexa_bold"
+                            android:text="@string/more"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+
+                    </RelativeLayout>
+
+                    <com.mlsdev.animatedrv.AnimatedRecyclerView
+                        android:id="@+id/imdb_recyclerview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layoutManagerType="grid"
+                        app:animationDuration="600"
+                        app:layoutAnimation="@anim/layout_animation_from_bottom_scale"
+                        app:layoutManagerReverse="true"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/imdbTitleLayout"
+                        android:layout_margin="@dimen/recyclerview_margin" />
+
+
+                    <RelativeLayout
+                        android:id="@+id/newMovieLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/imdb_recyclerview"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp">
+
+                        <TextView
+                            android:id="@+id/tv_newMovies"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginStart="5dp"
+                            android:background="@drawable/rounded_text_bg"
+                            android:fontFamily="@font/nexa_bold"
+                            android:padding="5dp"
+                            android:text="@string/new_movies"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_moreNewMovie"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="5dp"
+                            android:fontFamily="@font/nexa_bold"
+                            android:text="@string/more"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+
+                    </RelativeLayout>
+
+                    <com.mlsdev.animatedrv.AnimatedRecyclerView
+                        android:id="@+id/newMovie_recyclerview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layoutManagerType="grid"
+                        app:animationDuration="600"
+                        app:layoutAnimation="@anim/layout_animation_from_bottom_scale"
+                        app:layoutManagerReverse="true"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/newMovieLayout"
+                        android:layout_margin="@dimen/recyclerview_margin" />
+
+                    <RelativeLayout
+                        android:id="@+id/popularLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/newMovie_recyclerview"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp">
+
+                        <TextView
+                            android:id="@+id/tv_popular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginStart="5dp"
+                            android:background="@drawable/rounded_text_bg"
+                            android:fontFamily="@font/nexa_bold"
+                            android:padding="5dp"
+                            android:text="@string/popular"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_morePopular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="5dp"
+                            android:fontFamily="@font/nexa_bold"
+                            android:text="@string/more"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+
+                    </RelativeLayout>
+
+                    <com.mlsdev.animatedrv.AnimatedRecyclerView
+                        android:id="@+id/popular_recyclerview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layoutManagerType="grid"
+                        app:animationDuration="600"
+                        app:layoutAnimation="@anim/layout_animation_from_bottom_scale"
+                        app:layoutManagerReverse="true"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/popularLayout"
+                        android:layout_margin="@dimen/recyclerview_margin" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </ScrollView>
+        </com.baoyz.widget.PullRefreshLayout>
+
+</layout>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.baoyz.widget.PullRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark"
+        >
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.CommentDetailActivity"
+    android:background="@color/colorPrimaryDark">
+
+    <include layout="@layout/toolbar"
+        android:id="@+id/toolbarLayout"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:text="@string/no_comment"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:fontFamily="@font/helvetica"
+        android:textSize="18dp"/>
+
+    <com.mlsdev.animatedrv.AnimatedRecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManagerType="grid"
+        app:animationDuration="600"
+        app:layoutAnimation="@anim/layout_animation_random_scale"
+        app:layoutManagerReverse="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarLayout"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_send_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/colorPrimaryLight"
+        app:borderWidth="0dp"
+        android:src="@drawable/ic_baseline_add_comment_24"
+        android:tint="@color/white"
+
+        />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animProgress"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:lottie_speed="1"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/loading3"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.baoyz.widget.PullRefreshLayout>
+
+</layout>

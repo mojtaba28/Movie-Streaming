@@ -1,0 +1,152 @@
+<resources>
+    <string name="app_name">Movie Streaming</string>
+    <string name="genre">Genre</string>
+    <string name="top_imdb">Top IMDB</string>
+    <string name="more">More ></string>
+    <string name="new_movies">New Movies</string>
+    <string name="popular">Popular</string>
+    <string name="action">action</string>
+
+    <!--    navigation drawer items-->
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="category">Category</string>
+    <string name="profile">Profile</string>
+    <string name="purchase">Purchase</string>
+    <string name="setting">Setting</string>
+    <string name="favorite">Favorite</string>
+
+    <string name="test">dfsdsfs sdfsfsfsdfsdfs fsfsfsfs sfdsfsdfsfsdffs fsfsdfsfdsfsd fsfdf
+    sdfsfsfsfsdfsdfsdfsdfsdf sfsdfsdfsdfdsfsdfsdfd sfdfsfsf sdfsdf sdfsdfsd fsdf sdf sdfsfsf
+    sdfsfsdfsfsdfsdsfsdfsfsfsfs sdfsfs fdsfsfs fs</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="released">Released</string>
+    <string name="director">Director</string>
+    <string name="budget">Budget</string>
+    <string name="box_office">Box Office</string>
+    <string name="similar_movies">Similar Movies</string>
+    <string name="comments">Comments</string>
+    <string name="more_comment">More Comment</string>
+    <string name="cast">Cast</string>
+    <string name="description">Description</string>
+    <string name="search_movie_name">Search movie name</string>
+    <string name="no_movie"> There is no movie</string>
+    <string name="your_favorite_list_empty">Your favorite list is empty</string>
+    <string name="no_comment">  No comment for this movie yet</string>
+
+    <string name="email">Email</string>
+    <string name="login">Login</string>
+    <string name="account">Account</string>
+    <string name="login_successfully">Login Successfully</string>
+    <string name="signup">Sign Up</string>
+    <string name="register">Register</string>
+    <string name="save">Save</string>
+    <string name="successful">successful</string>
+    <string name="update">Update</string>
+    <string name="phone">Phone</string>
+    <string name="password">Password</string>
+    <string name="old_password">Old Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_new_password">Confirm New Password</string>
+    <string name="password_error">password should not be more than 8 character</string>
+    <string name="forgot_password">Forgot Your Password ?</string>
+    <string name="dont_have_an_account">dont have an account?</string>
+    <string name="login_with_phone">Login With Your Phone Number</string>
+    <string name="register_with_phone">Register With Your Phone Number</string>
+    <string name="complete_your_info">Complete Your Account Information</string>
+    <string name="no_Internet">Oops!!No Internet</string>
+
+    <string name="confirm_submitted_code">Confirm The Submitted Code</string>
+    <string name="activation_code_sent">The Activation code sent to :</string>
+    <string name="phone_example">09391349306</string>
+    <string name="confirm">Confirm</string>
+    <string name="resend_code_after">Resend Code After : </string>
+    <string name="resend">Resend</string>
+    <string name="time_example">00:59</string>
+    <string name="complete_information">Complete the Information</string>
+    <string name="name">Name</string>
+    <string name="last_name">Last Name</string>
+
+    <string name="invalid_phone">invalid phone number</string>
+    <string name="user_already_exist">user already exist</string>
+    <string name="enter_verify_code">please enter verify code</string>
+    <string name="verify_code_not_correct">verify code is not correct</string>
+    <string name="successfully_registered">registered successfully</string>
+    <string name="failed">failed</string>
+    <string name="unable_connect_to_server">Unable connect to server</string>
+    <string name="unable_to_refresh">unable to refresh</string>
+    <string name="failed_login">Failed In Login</string>
+
+    <string name="enter_name">please enter your name</string>
+    <string name="enter_lastName">please enter your last name</string>
+    <string name="enter_password">please enter your password</string>
+    <string name="enter_current_password">please enter your current password</string>
+    <string name="enter_new_password">please enter your new password</string>
+
+    <string name="enter_confirm_password">please enter your password again</string>
+    <string name="enter_phone">please enter your phone number</string>
+    <string name="passwords_not_equal">password are not equal</string>
+    <string name="new_passwords_not_equal">New passwords are not equal</string>
+    <string name="your_password_changed_successfully">Your password changed successfully</string>
+
+
+    <string name="exit">Exit</string>
+    <string name="exit_of_account">Do you want exit of your account?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <string name="write_yor_comment">Write your comment</string>
+    <string name="send_your_comment">Send your comment</string>
+    <string name="send_comment">Send Comment</string>
+    <string name="empty_comment">Your comment is empty!</string>
+    <string name="comment_sent_successfully">Your comment sent successfully</string>
+    <string name="send">Send</string>
+
+
+    <string name="favorites">Favorites</string>
+    <string name="support">Support</string>
+    <string name="about">About</string>
+    <string name="exit_from_account">Exit From Account</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="change_password">Change Password</string>
+    <string name="remove_image">Remove Image</string>
+
+
+    <string name="movie_added">Movie added to your favorite list</string>
+    <string name="movie_removed">Movie removed from your favorite list</string>
+    <string name="do_you_want_delete_movie">Do you want delete this movie?</string>
+
+    <string name="no_changes_have_been_made">No changes have been made</string>
+    <string name="profile_updated_successfully">Profile updated successfully</string>
+
+
+    <!--    tab layout items-->
+    <string name="by_name">By Name</string>
+    <string name="by_director">By Director</string>
+    <string name="by_genre">By Genre</string>
+    <string name="by_year">By Year</string>
+
+    <!--    about us-->
+    <string name="about_us_description">Movie Streaming is an open source app that show us last and
+    newest movies.also you can make account , save movies in favourite list,watch preview of movie,post comment and etc.
+
+    </string>
+    <string name="developer">Developer : Mojtaba Joshaghani </string>
+    <string name="developer_email">Developer Email : <br/> mojtaba.joshaghani99@gmail.com</string>
+    <string name="email_dev">mojtaba.joshaghani99@gmail.com</string>
+    <string name="whatsapp">WhatsApp</string>
+
+
+    <string name="download">Download</string>
+    <string name="quality480">480</string>
+    <string name="quality720">720</string>
+    <string name="quality1080">1080</string>
+
+
+</resources>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/tools">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    >
+
+    <RelativeLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/colorPrimaryDark"
+        android:layout_marginTop="10dp"
+
+        >
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_width="@dimen/ic_size"
+            android:layout_height="@dimen/ic_size"
+            android:src="@drawable/ic_baseline_keyboard_backspace_24"
+            app:tint="@color/colorAccent"
+            android:layout_marginStart="10dp"
+            android:layout_centerVertical="true"/>
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_toEndOf="@+id/img_back"
+            app:queryHint="@string/search_movie_name"
+            app:searchIcon="@drawable/ic_baseline_search_24"
+            app:closeIcon="@drawable/ic_baseline_close_24"
+            android:background="@drawable/bg_search"/>
+
+
+    </RelativeLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabTextColor="@color/white"
+        app:tabIndicatorColor="@color/colorAccent"
+        android:animateLayoutChanges="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerLayout"/>
+
+    <com.mlsdev.animatedrv.AnimatedRecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/recyclerview_margin"
+        app:layoutManagerType="grid"
+        app:animationDuration="600"
+        app:layoutAnimation="@anim/layout_animation_from_bottom_scale"
+        app:layoutManagerReverse="true"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/recyclerview"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/emptyAnim"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tv_empty"
+        android:layout_marginBottom="5dp"
+        app:lottie_rawRes="@raw/empty"
+        app:lottie_loop="true"
+        app:lottie_autoPlay="true"
+        android:visibility="visible"/>
+
+    <TextView
+        android:id="@+id/tv_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/white"
+        android:text="@string/no_movie"
+        android:fontFamily="@font/helvetica"
+        android:textSize="18dp"
+        />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animProgress"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:lottie_speed="1"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:visibility="gone"
+        app:lottie_rawRes="@raw/loading3"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

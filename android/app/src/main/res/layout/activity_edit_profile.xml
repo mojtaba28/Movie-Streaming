@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+
+            >
+
+            <include
+                android:id="@+id/toolbarLayout"
+                layout="@layout/toolbar" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/toolbarLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/layout2"
+                >
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_profile"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+
+                    android:src="@drawable/profile_ic3"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_remove"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/img_profile"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="@string/remove_image"
+                    android:fontFamily="@font/helvetica_bold"
+                    android:layout_margin="10dp"
+                    android:textColor="@color/white"
+                    android:textSize="12dp"/>
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout2"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/top_rounded_bg"
+                app:layout_constraintTop_toBottomOf="@+id/layout1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textField_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:hint="@string/name"
+                    android:layout_margin="20dp"
+                    android:textColorHint="@color/white"
+                    app:hintTextAppearance="@style/TextAppearance.Design.Hint"
+
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/edt_name"
+                        android:background="@drawable/edittext_bg"
+                        android:padding="10dp"
+                        android:fontFamily="@font/helvetica"
+                        android:inputType="text"
+                        android:textColor="@color/white"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textField_lastName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/textField_name"
+                    android:hint="@string/last_name"
+                    android:layout_margin="20dp"
+                    android:textColorHint="@color/white"
+                    app:hintTextAppearance="@style/TextAppearance.Design.Hint"
+
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/edt_lastName"
+                        android:background="@drawable/edittext_bg"
+                        android:padding="10dp"
+                        android:fontFamily="@font/helvetica"
+                        android:inputType="text"
+                        android:textColor="@color/white"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/btn_update"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textField_lastName"
+                    android:layout_marginTop="40dp"
+                    android:text="@string/update"
+                    android:background="@drawable/button_bg1"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animProgress"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:lottie_speed="1"
+                android:visibility="gone"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_update"
+                android:layout_margin="10dp"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/loading3"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

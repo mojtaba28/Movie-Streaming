@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context=".Activity.HomeActivity">
+
+        <fragment
+            android:id="@+id/navHost"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:defaultNavHost="true"
+            app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navGraph="@navigation/nav_graph" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:theme="@style/Widget.BottomNavigationView"
+            app:itemHorizontalTranslationEnabled="true"
+            app:itemIconTint="@color/bottom_nav_color"
+            app:itemTextColor="@color/bottom_nav_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:menu="@menu/bottom_nav_items"
+            app:labelVisibilityMode="selected"/>
+
+        <!--      <nl.joery.animatedbottombar.AnimatedBottomBar-->
+        <!--          android:id="@+id/bottom_bar"-->
+        <!--          android:background="@color/colorPrimary"-->
+        <!--          android:layout_width="match_parent"-->
+        <!--          android:layout_height="wrap_content"-->
+        <!--          app:abb_selectedTabType="text"-->
+        <!--          app:abb_indicatorAppearance="round"-->
+        <!--          app:abb_indicatorMargin="16dp"-->
+        <!--          app:abb_indicatorHeight="4dp"-->
+        <!--          app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--          app:layout_constraintStart_toStartOf="parent"-->
+        <!--          app:layout_constraintEnd_toEndOf="parent"-->
+        <!--          app:abb_tabs="@menu/bottom_nav_items"-->
+        <!--          app:abb_selectedIndex="0"-->
+        <!--          app:abb_indicatorLocation="top"-->
+        <!--          app:abb_tabColor="@color/white"-->
+        <!--          app:abb_tabColorSelected="@color/colorAccent"-->
+        <!--          app:abb_indicatorColor="@color/colorAccent"-->
+
+        <!--          />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

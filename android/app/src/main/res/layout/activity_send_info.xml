@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        tools:context=".Activity.SendInfoActivity">
+
+        <include
+            android:id="@+id/toolbarLayout"
+            layout="@layout/toolbar" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/bodyLayout"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarLayout">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_margin="20dp"
+            android:fontFamily="@font/helvetica_bold"
+            android:lineSpacingExtra="8dp"
+            android:text="@string/complete_your_info"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bodyLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/top_rounded_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerLayout">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textField_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="20dp"
+            android:focusableInTouchMode="true"
+            android:hint="@string/name"
+            android:textColorHint="@color/white"
+            app:hintTextAppearance="@style/TextAppearance.Design.Hint"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_bg"
+                android:fontFamily="@font/helvetica"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColor="@color/white" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textField_lastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="@string/last_name"
+            android:textColorHint="@color/white"
+            app:hintTextAppearance="@style/TextAppearance.Design.Hint"
+            app:layout_constraintTop_toBottomOf="@+id/textField_name"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_lastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_bg"
+                android:fontFamily="@font/helvetica"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColor="@color/white" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textField_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="@string/password"
+            android:textColorHint="@color/white"
+            app:hintTextAppearance="@style/TextAppearance.Design.Hint"
+            app:layout_constraintTop_toBottomOf="@+id/textField_lastName"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/white"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_bg"
+                android:fontFamily="@font/helvetica"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:textColor="@color/white" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textField_confirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="@string/confirm_password"
+            android:textColorHint="@color/white"
+            app:hintTextAppearance="@style/TextAppearance.Design.Hint"
+            app:layout_constraintTop_toBottomOf="@+id/textField_password"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/white"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_confirmPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_bg"
+                android:fontFamily="@font/helvetica"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:textColor="@color/white" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/button_bg1"
+            android:text="@string/save"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textField_confirmPassword" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animProgress"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_save"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loading3"
+            app:lottie_speed="1" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

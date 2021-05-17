@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark">
+
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/coordinatorLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_profile"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/profile_ic3"
+                android:scaleType="centerCrop"
+                app:layout_anchor="@id/profile_cardView"
+                app:layout_anchorGravity="top|center"
+                android:elevation="3dp"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/profile_cardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="20dp"
+                app:cardBackgroundColor="@color/colorPrimary"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:fontFamily="@font/nexa_bold"
+                        android:textColor="@color/white"
+                        android:textSize="18dp"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="mojtaba" />
+
+                    <TextView
+                        android:id="@+id/tv_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/nexa_bold"
+                        android:textColor="@color/white"
+                        android:textSize="18dp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_name"
+                        tools:text="09391349306" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_login"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:fontFamily="@font/helvetica_bold"
+                        android:text="@string/login"
+                        android:textColor="@color/white"
+                        android:textSize="18dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_register"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="15dp"
+                        android:fontFamily="@font/helvetica_bold"
+                        android:text="@string/register"
+                        android:textColor="@color/white"
+                        android:textSize="18dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_login" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="20dp"
+            app:layout_constraintTop_toBottomOf="@id/coordinatorLayout">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/linear_favorite"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_favorite"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1.8"
+                        android:fontFamily="@font/helvetica_bold"
+                        android:text="@string/favorites"
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+
+                    <ImageView
+                        android:id="@+id/img_favoriteArrow"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/ic_size"
+                        android:layout_gravity="end"
+                        android:layout_weight="0.2"
+                        android:src="@drawable/arrow_ic2"
+                        app:tint="@color/white" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view_favorite"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white_light" />
+
+
+                <LinearLayout
+                    android:id="@+id/linear_about"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="start|center"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_about"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1.8"
+                        android:fontFamily="@font/helvetica_bold"
+                        android:text="@string/about"
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+
+                    <ImageView
+                        android:id="@+id/img_aboutArrow"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/ic_size"
+                        android:layout_gravity="end"
+                        android:layout_weight="0.2"
+                        android:src="@drawable/arrow_ic2"
+                        app:tint="@color/white" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view_about"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white_light"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/linear_editProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="start|center"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:weightSum="2">
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_editProfile"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1.8"
+                        android:fontFamily="@font/helvetica_bold"
+                        android:text="@string/edit_profile"
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+
+                    <ImageView
+                        android:id="@+id/img_editProfileArrow"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/ic_size"
+                        android:layout_gravity="end"
+                        android:layout_weight="0.2"
+                        android:src="@drawable/arrow_ic2"
+                        app:tint="@color/white" />
+
+
+                </LinearLayout>
+
+
+                <View
+                    android:id="@+id/view_editProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white_light"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/linear_changePassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="start|center"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:weightSum="2">
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_changePassword"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1.8"
+                        android:fontFamily="@font/helvetica_bold"
+                        android:text="@string/change_password"
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+
+                    <ImageView
+                        android:id="@+id/img_changePassword"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/ic_size"
+                        android:layout_gravity="end"
+                        android:layout_weight="0.2"
+                        android:src="@drawable/arrow_ic2"
+                        app:tint="@color/white" />
+
+
+                </LinearLayout>
+
+
+                <View
+                    android:id="@+id/view_changePassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white_light"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/linear_exit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="start|center"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:weightSum="2">
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_exit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1.8"
+                        android:fontFamily="@font/helvetica_bold"
+                        android:text="@string/exit_from_account"
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+
+
+                    <ImageView
+                        android:id="@+id/img_exitArrow"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/ic_size"
+                        android:layout_gravity="end"
+                        android:layout_weight="0.2"
+                        android:src="@drawable/arrow_ic2"
+                        app:tint="@color/white" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

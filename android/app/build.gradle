@@ -1,0 +1,127 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        applicationId "com.example.moviestreaming"
+        minSdkVersion 17
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+
+    dataBinding{
+        enabled=true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    def lifecycle_version = "2.3.0"
+    def multidex_version = "2.0.1"
+    def room_version = "2.2.6"
+    def exoplayer_version = "2.13.2"
+
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'com.google.android.material:material:1.0.0'
+
+    //volley
+    implementation 'com.android.volley:volley:1.1.1'
+
+    //retrofit and Gson
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
+
+
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor "com.github.bumptech.glide:compiler:4.11.0"
+    //CircleImageView
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    //navigation drawer
+    implementation 'com.infideap.drawerbehavior:drawer-behavior:1.0.0'
+    //room
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    //rxjava
+    def rxjavaVersion="3.0.0"
+    implementation "io.reactivex.rxjava3:rxandroid:$rxjavaVersion"
+    implementation "io.reactivex.rxjava3:rxjava:$rxjavaVersion"
+    implementation "com.github.akarnokd:rxjava3-retrofit-adapter:$rxjavaVersion"
+
+    //pin view
+    implementation 'com.chaos.view:pinview:1.4.4'
+
+    //lottie
+    implementation 'com.airbnb.android:lottie:3.6.0'
+
+    //bottom bar
+    implementation 'nl.joery.animatedbottombar:library:1.0.9'
+    implementation 'com.android.support:multidex:1.0.3'
+
+    //pageindicatorview
+    implementation 'com.romandanylyk:pageindicatorview:1.0.3'
+
+
+    implementation "androidx.multidex:multidex:$multidex_version"
+
+
+
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
+    // Saved state module for ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
+    // Annotation processor
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+
+
+    //pushdown button anim
+    implementation( 'com.github.thekhaeng:pushdown-anim-click:1.1.1' ){
+        exclude group: 'com.android.support'
+    }
+    //better video
+    implementation 'com.github.halilozercan:BetterVideoPlayer:1.1.0'
+    //dexter runtime permission
+    implementation 'com.karumi:dexter:6.2.2'
+    //pull refresh layout
+    implementation 'com.baoyz.pullrefreshlayout:library:1.2.0'
+    //animated recyclerview
+    implementation "com.mlsdev.animatedrv:library:2.0.0"
+
+    def nav_version = "2.3.5"
+    // Java language implementation
+    implementation "androidx.navigation:navigation-fragment:$nav_version"
+    implementation "androidx.navigation:navigation-ui:$nav_version"
+
+    def reactivestreams_version = "1.2.1"
+    implementation "android.arch.lifecycle:reactivestreams:$reactivestreams_version"
+
+
+}

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Activity.FavoriteActivity"
+        android:background="@color/colorPrimaryDark">
+
+        <include layout="@layout/toolbar"
+            android:id="@+id/toolbarLayout"/>
+
+
+        <com.mlsdev.animatedrv.AnimatedRecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:animationDuration="600"
+            app:layoutAnimation="@anim/layout_animation_from_bottom_scale"
+            app:layoutManagerReverse="true"
+            app:layout_constraintTop_toBottomOf="@id/toolbarLayout"
+            android:padding="@dimen/recyclerview_padding"/>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/emptyAnim"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/tv_empty"
+            android:layout_marginBottom="5dp"
+            app:lottie_rawRes="@raw/empty"
+            app:lottie_loop="true"
+            app:lottie_autoPlay="true"
+            android:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/tv_empty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/your_favorite_list_empty"
+            android:fontFamily="@font/helvetica"
+            android:textSize="18dp"
+            android:visibility="visible"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

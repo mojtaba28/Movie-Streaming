@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.moviestreaming">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name="androidx.multidex.MultiDexApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".Activity.AboutUsActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".Activity.MoviePreviewActivity" android:screenOrientation="portrait" />
+        <activity android:name=".Activity.EditProfileActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".Activity.SendCommentActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".Activity.CommentDetailActivity" android:screenOrientation="portrait" />
+        <activity android:name=".Activity.SendInfoActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activity.SplashActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activity.VerifyActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".Activity.RegisterActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".Activity.LoginActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".Activity.AccountActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".Activity.FavoriteActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".Activity.MovieDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".Activity.MovieActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".Activity.HomeActivity" android:screenOrientation="portrait"/>
+    </application>
+
+</manifest>

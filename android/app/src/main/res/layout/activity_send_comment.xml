@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark">
+
+
+        >
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            tools:context=".Activity.SendCommentActivity">
+
+            <include
+                android:id="@+id/toolbarLayout"
+                layout="@layout/toolbar" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/headerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            app:layout_constraintBottom_toTopOf="@+id/bodyLayout"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarLayout">
+
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:fontFamily="@font/helvetica_bold"
+                android:text="@string/send_your_comment"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                 />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bodyLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/top_rounded_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/headerLayout">
+
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edt_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="20dp"
+                android:textSize="16dp"
+                android:background="@drawable/edittext_bg"
+                android:hint="@string/write_yor_comment"
+                android:fontFamily="@font/helvetica"
+                android:minHeight="100dp"
+                android:paddingStart="10dp"
+                android:textColorHint="@color/gray"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/spoil_checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edt_comment"
+                android:layout_margin="20dp"
+                android:buttonTint="@color/colorAccent"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_spoil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Is your comment contains spoiling content?"
+                android:textSize="14dp"
+                android:fontFamily="@font/helvetica"
+                android:textColor="@color/white"
+                android:layout_marginStart="10dp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/spoil_checkBox"
+                app:layout_constraintStart_toEndOf="@id/spoil_checkBox"/>
+
+            <Button
+                android:id="@+id/btn_sendComment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_spoil"
+                android:layout_marginTop="40dp"
+                android:text="@string/send"
+                android:background="@drawable/button_bg1"/>
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animProgress"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:lottie_speed="1"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/btn_sendComment"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                android:visibility="gone"
+                app:lottie_rawRes="@raw/loading3"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>
