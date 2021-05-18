@@ -1,6 +1,7 @@
 package com.example.moviestreaming.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ComponentActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -105,6 +106,7 @@ public class VerifyActivity extends AppCompatActivity {
                            overridePendingTransition(R.anim.slide_in_right,
                                    R.anim.slide_out_left);
                            finish();
+
                        }
                    },1000);
 

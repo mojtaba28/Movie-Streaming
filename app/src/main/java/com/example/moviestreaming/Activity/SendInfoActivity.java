@@ -88,7 +88,6 @@ public class SendInfoActivity extends AppCompatActivity {
                             if (responseModel!=null){
 
                                 if (responseModel.getStatus().equals("successful")){
-
                                     Intent intent=new Intent(getApplicationContext(), LoginActivity.class);
                                     startActivity(intent);
                                     finish();

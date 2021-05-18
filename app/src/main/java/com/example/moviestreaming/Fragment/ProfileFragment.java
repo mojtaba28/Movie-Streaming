@@ -167,7 +167,9 @@ public class ProfileFragment extends Fragment {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 sessionManager.setLoggedIn(false);
-                                startActivity(new Intent(getContext(),HomeActivity.class));
+                                Intent intent=new Intent(getContext(),HomeActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(intent);
                                 dialog.dismiss();
                                 getActivity().overridePendingTransition(R.anim.slide_in_left,
                                         R.anim.slide_out_right);

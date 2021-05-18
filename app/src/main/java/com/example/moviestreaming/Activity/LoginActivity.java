@@ -5,6 +5,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -23,13 +24,14 @@ public class LoginActivity extends AppCompatActivity {
 
     ActivityLoginBinding binding;
     LoginViewModel loginViewModel;
+    public static Activity activity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding= DataBindingUtil.setContentView(this,R.layout.activity_login);
         loginViewModel=new ViewModelProvider(this).get(LoginViewModel.class);
-
+        activity =this;
         registerIntent();
         login();
         backButton();
@@ -103,6 +105,7 @@ public class LoginActivity extends AppCompatActivity {
                                     sessionManager.setUserPassword(password);
                                     sessionManager.setUserLastName(userModel.getLast_name());
                                     Intent intent=new Intent(getApplicationContext(), HomeActivity.class);
+                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                     startActivity(intent);
                                     overridePendingTransition(R.anim.slide_in_right,
                                             R.anim.slide_out_left);

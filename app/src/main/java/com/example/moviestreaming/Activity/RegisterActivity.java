@@ -5,6 +5,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -22,6 +23,7 @@ public class RegisterActivity extends AppCompatActivity {
     ActivityRegisterBinding binding;
     View contentView;
     RegisterViewModel registerViewModel;
+    public static Activity activity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,7 @@ public class RegisterActivity extends AppCompatActivity {
         binding= DataBindingUtil.setContentView(this,R.layout.activity_register);
         registerViewModel=new ViewModelProvider(this).get(RegisterViewModel.class);
         contentView=findViewById(android.R.id.content);
+        activity=this;
         PushDownAnim.setPushDownAnimTo(binding.btnRegister).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

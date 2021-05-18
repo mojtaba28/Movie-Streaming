@@ -66,7 +66,7 @@ public class HomeActivity extends AppCompatActivity {
 //            fragmentManager.popBackStack();
 //
 //        }
-            finish();
+            super.onBackPressed();
 
 
 
