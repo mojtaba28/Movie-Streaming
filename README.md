@@ -5,18 +5,15 @@ An Android application which shows Popular, New Movies, Top Rated movies and all
 <table>
 	<tr><td><img src="https://github.com/mojtaba28/Movie-Streaming/blob/main/screenshots/home.png"></td>
 	<td><img src="https://github.com/mojtaba28/Movie-Streaming/blob/main/screenshots/movie_detail.png"></td>
-	<td><img src="https://github.com/mojtaba28/Movie-Streaming/blob/main/screenshots/category.png"></td>
-	<td><img src="https://github.com/mojtaba28/Movie-Streaming/blob/main/screenshots/action.png"></td></tr>
-
-	<tr><td><img src="https://github.com/mojtaba28/Movie-Streaming/blob/main/screenshots/favorite_list.png"></td>
-	<td><img src="https://github.com/mojtaba28/Movie-Streaming/blob/main/screenshots/search.png"></td>
+	<td><img src="https://github.com/mojtaba28/Movie-Streaming/blob/main/screenshots/category.png"></td></tr>
+	<tr><td><img src="https://github.com/mojtaba28/Movie-Streaming/blob/main/screenshots/action.png"></td>
+	<td><img src="https://github.com/mojtaba28/Movie-Streaming/blob/main/screenshots/favorite_list.png"></td>
+	<td><img src="https://github.com/mojtaba28/Movie-Streaming/blob/main/screenshots/search.png"></td></tr>
 	<td><img src="https://github.com/mojtaba28/Movie-Streaming/blob/main/screenshots/profile.png"></td></tr>
-
-	<tr><td><img src="https://github.com/mojtaba28/Movie-Streaming/blob/main/screenshots/login.png"></td>
-	<td><img src="https://github.com/mojtaba28/Movie-Streaming/blob/main/screenshots/register.png"></td>
+	<td><img src="https://github.com/mojtaba28/Movie-Streaming/blob/main/screenshots/login.png"></td></tr>
+	<td><img src="https://github.com/mojtaba28/Movie-Streaming/blob/main/screenshots/register.png"></td></tr>
 	<td><img src="https://github.com/mojtaba28/Movie-Streaming/blob/main/screenshots/verify.png"></td></tr>
-
-	<tr><td><img src="https://github.com/mojtaba28/Movie-Streaming/blob/main/screenshots/edit_profile.png"></td>
+	<td><img src="https://github.com/mojtaba28/Movie-Streaming/blob/main/screenshots/edit_profile.png"></td></tr>
 	<td><img src="https://github.com/mojtaba28/Movie-Streaming/blob/main/screenshots/change_password.png"></td></tr>
 </table>
 
