@@ -32,6 +32,7 @@ public class LoginActivity extends AppCompatActivity {
 
         registerIntent();
         login();
+        backButton();
 
     }
 
