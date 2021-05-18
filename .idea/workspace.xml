@@ -16,20 +16,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b9bb7c9-e708-48b5-b1e5-2042816a26a0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/moviestreaming/Activity/HomeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/moviestreaming/Activity/HomeActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/moviestreaming/Activity/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/moviestreaming/Activity/LoginActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/moviestreaming/Activity/RegisterActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/moviestreaming/Activity/RegisterActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/moviestreaming/Activity/SendInfoActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/moviestreaming/Activity/SendInfoActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/moviestreaming/Activity/VerifyActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/moviestreaming/Activity/VerifyActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/moviestreaming/Fragment/ProfileFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/moviestreaming/Fragment/ProfileFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/moviestreaming/Activity/MovieDetailActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/moviestreaming/Activity/MovieDetailActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/moviestreaming/Fragment/GenreFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/moviestreaming/Fragment/GenreFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/moviestreaming/Utils/API.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[127.0.0.1:62001]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -272,14 +268,22 @@
       <option name="project" value="LOCAL" />
       <updated>1621332661575</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="add FLAG_ACTIVITY_CLEAR_TOP commit">
+      <created>1621374926281</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1621374926281</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <MESSAGE value="README.md commit" />
     <MESSAGE value="changing login activity commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="changing login activity commit" />
+    <MESSAGE value="add FLAG_ACTIVITY_CLEAR_TOP commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="add FLAG_ACTIVITY_CLEAR_TOP commit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="488" y="48" key="#com.intellij.ide.util.MemberChooser" timestamp="1621169436518">
@@ -318,10 +322,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="528" y="171" key="AndroidCreateXmlResourceDialog/0.0.1366.728@0.0.1366.728" timestamp="1620670140785" />
-    <state x="250" y="0" key="CommitChangelistDialog2" timestamp="1621332660066">
+    <state x="339" y="0" key="CommitChangelistDialog2" timestamp="1621374925342">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="250" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1621332660066" />
+    <state x="339" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1621374925342" />
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1621256598352">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -346,10 +350,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1615800607845" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1621326104633">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1621374943130">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1621326104633" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1621374943130" />
     <state x="499" y="142" key="chooseDestDirectoryDialog" timestamp="1620847065310">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

@@ -15,14 +15,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.Volley;
-
 import com.example.moviestreaming.Activity.MovieActivity;
 import com.example.moviestreaming.Adapter.GenreAdapter;
 import com.example.moviestreaming.Model.GenreModel;
 import com.example.moviestreaming.R;
-import com.example.moviestreaming.Utils.API;
 import com.example.moviestreaming.Utils.Methods;
 import com.example.moviestreaming.databinding.FragmentGenreBinding;
 import com.example.moviestreaming.viewmodel.GenreViewModel;
