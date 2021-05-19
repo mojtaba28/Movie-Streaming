@@ -11,11 +11,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.example.moviestreaming.Model.Actors.ActorItems;
 import com.example.moviestreaming.Model.CommentModel;
 import com.example.moviestreaming.R;
 import com.example.moviestreaming.Utils.Constant;
-import com.example.moviestreaming.databinding.ItemsActorsBinding;
 import com.example.moviestreaming.databinding.ItemsCommentBinding;
 
 import java.util.List;

@@ -22,7 +22,6 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 public class FavoriteViewModel extends AndroidViewModel {
 
     private MutableLiveData<List<Favorites>> favoriteMutableLiveData;
-    private MediatorLiveData<List<Favorites>> liveData=new MediatorLiveData<>();
     private AppDatabase appDatabase;
     List<Favorites> favoritesList=new ArrayList<>();
 

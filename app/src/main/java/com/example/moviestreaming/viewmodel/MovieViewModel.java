@@ -32,13 +32,6 @@ public class MovieViewModel extends ViewModel {
     private MutableLiveData<List<MovieModel>> popularMovieMutableLiveData;
     private MutableLiveData<List<MovieModel>> movieByGenreMutableLiveData;
 
-    public MutableLiveData<List<MovieModel>> getSimilarMovieMutableLiveData(){
-        if (similarMovieMutableLiveData==null){
-            similarMovieMutableLiveData=new MutableLiveData<>();
-        }
-
-        return similarMovieMutableLiveData;
-    }
 
     public MutableLiveData<List<MovieModel>> getNewMovieMutableLiveData(){
         if (newMovieMutableLiveData==null){
@@ -72,36 +65,6 @@ public class MovieViewModel extends ViewModel {
         return movieByGenreMutableLiveData;
     }
 
-
-    public void getSimilarMovie(String genre){
-        ApiService apiService= ApiClient.getRetrofitClient(Constant.MAIN_URL).create(ApiService.class);
-        apiService.getMovieByGenre(genre)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<List<MovieModel>>() {
-                    @Override
-                    public void onSubscribe(@NonNull Disposable d) {
-
-                    }
-
-                    @Override
-                    public void onNext(@NonNull List<MovieModel> list) {
-
-                        similarMovieMutableLiveData.postValue(list);
-                    }
-
-                    @Override
-                    public void onError(@NonNull Throwable e) {
-
-                        similarMovieMutableLiveData.postValue(null);
-                    }
-
-                    @Override
-                    public void onComplete() {
-
-                    }
-                });
-    }
 
     public void getNewMovie(String category){
         ApiService apiService= ApiClient.getRetrofitClient(Constant.MAIN_URL).create(ApiService.class);

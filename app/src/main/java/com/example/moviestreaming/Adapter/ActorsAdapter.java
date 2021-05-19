@@ -9,7 +9,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.moviestreaming.Model.Actors.ActorItems;
+import com.example.moviestreaming.Model.ActorModel;
 import com.example.moviestreaming.R;
 import com.example.moviestreaming.Utils.Constant;
 import com.example.moviestreaming.databinding.ItemsActorsBinding;
@@ -19,8 +19,8 @@ import java.util.List;
 public class ActorsAdapter extends RecyclerView.Adapter<ActorsAdapter.ViewHolder> {
 
     Context context;
-    List<ActorItems> list;
-    public ActorsAdapter(Context context, List<ActorItems> list){
+    List<ActorModel> list;
+    public ActorsAdapter(Context context, List<ActorModel> list){
         this.context=context;
         this.list=list;
     }
@@ -37,7 +37,7 @@ public class ActorsAdapter extends RecyclerView.Adapter<ActorsAdapter.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        final ActorItems model=list.get(position);
+        final ActorModel model=list.get(position);
 
        holder.binding.tvName.setText(model.getName());
 

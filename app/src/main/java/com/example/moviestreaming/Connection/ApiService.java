@@ -1,6 +1,6 @@
 package com.example.moviestreaming.Connection;
 
-import com.example.moviestreaming.Model.Actors.ActorModel;
+import com.example.moviestreaming.Model.ActorModel;
 import com.example.moviestreaming.Model.CommentModel;
 import com.example.moviestreaming.Model.GenreModel;
 import com.example.moviestreaming.Model.MovieModel;
@@ -8,18 +8,14 @@ import com.example.moviestreaming.Model.MovieResult;
 import com.example.moviestreaming.Model.ResponseModel;
 import com.example.moviestreaming.Model.SliderModel;
 import com.example.moviestreaming.Model.UserModel;
-import com.example.moviestreaming.Utils.Constant;
-import com.example.moviestreaming.Utils.SessionManager;
 
 import java.util.List;
 
 import io.reactivex.rxjava3.core.Observable;
 import okhttp3.MultipartBody;
 import okhttp3.ResponseBody;
-import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
-import retrofit2.http.Headers;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
@@ -45,7 +41,7 @@ public interface ApiService {
                             @Query("template")String template);
 
     @GET("getActors.php")
-    Call<ActorModel> getActors(@Query("movie_id") String movieId);
+    Observable<List<ActorModel>> getActors(@Query("movie_id") String movieId);
 
     @GET("getComment.php")
     Observable<List<CommentModel>> getComment(@Query("movie_id") String movieId);

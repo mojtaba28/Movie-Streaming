@@ -18,10 +18,8 @@ import com.bumptech.glide.Glide;
 import com.example.moviestreaming.Adapter.ActorsAdapter;
 import com.example.moviestreaming.Adapter.CommentAdapter;
 import com.example.moviestreaming.Adapter.MovieByGenreAdapter;
-import com.example.moviestreaming.Connection.ApiClient;
 import com.example.moviestreaming.Connection.ApiService;
-import com.example.moviestreaming.Model.Actors.ActorItems;
-import com.example.moviestreaming.Model.Actors.ActorModel;
+import com.example.moviestreaming.Model.ActorModel;
 import com.example.moviestreaming.Model.CommentModel;
 import com.example.moviestreaming.Model.MovieModel;
 import com.example.moviestreaming.R;
@@ -33,18 +31,12 @@ import com.example.moviestreaming.Utils.SessionManager;
 import com.example.moviestreaming.databinding.ActivityMovieDetailBinding;
 import com.example.moviestreaming.databinding.DialogDownloadBinding;
 import com.example.moviestreaming.databinding.DialogLoginBinding;
-import com.example.moviestreaming.viewmodel.CommentViewModel;
-import com.example.moviestreaming.viewmodel.FavoriteViewModel;
-import com.example.moviestreaming.viewmodel.MovieViewModel;
+import com.example.moviestreaming.viewmodel.MovieDetailActivityViewModel;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.thekhaeng.pushdownanim.PushDownAnim;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 import static com.thekhaeng.pushdownanim.PushDownAnim.MODE_SCALE;
 
@@ -53,22 +45,16 @@ public class MovieDetailActivity extends AppCompatActivity {
     ActivityMovieDetailBinding binding;
     Bundle bundle;
     public AppDatabase appDatabase;
-    FavoriteViewModel favoriteViewModel;
-    MovieViewModel movieViewModel;
-    CommentViewModel commentViewModel;
-
-    ApiService apiService;
+    MovieDetailActivityViewModel viewModel;
 
     //Similar Movie
-    List<MovieModel> similarMovieList=new ArrayList<>();
     MovieByGenreAdapter movieByGenreAdapter;
 
     //movie actors
-    List<ActorItems> actorsList=new ArrayList<>();
+    List<ActorModel> actorsList=new ArrayList<>();
     ActorsAdapter actorsAdapter;
 
     //comments
-    List<CommentModel> commentList=new ArrayList<>();
     CommentAdapter commentAdapter;
 
     SessionManager sessionManager;
@@ -79,9 +65,7 @@ public class MovieDetailActivity extends AppCompatActivity {
         binding= DataBindingUtil.setContentView(this,R.layout.activity_movie_detail);
         bundle=getIntent().getExtras();
         sessionManager=new SessionManager(getApplicationContext());
-        favoriteViewModel =new ViewModelProvider(this).get(FavoriteViewModel.class);
-        movieViewModel=new ViewModelProvider(this).get(MovieViewModel.class);
-        commentViewModel=new ViewModelProvider(this).get(CommentViewModel.class);
+        viewModel=new ViewModelProvider(this).get(MovieDetailActivityViewModel.class);
         appDatabase = AppDatabase.getInstance(this);
 
         checkFavorite();
@@ -262,22 +246,20 @@ public class MovieDetailActivity extends AppCompatActivity {
 //                    }
 //                });
 
-        apiService = ApiClient.getRetrofitClient(Constant.MAIN_URL).create(ApiService.class);
-        apiService.getActors(bundle.getString("id")).enqueue(new Callback<ActorModel>() {
+        viewModel.getActors(bundle.getString("id")).observe(this, new Observer<List<ActorModel>>() {
             @Override
-            public void onResponse(Call<ActorModel> call, Response<ActorModel> response) {
-                binding.animProgress.setVisibility(View.GONE);
-                actorsList=response.body().getActorList();
-                        binding.castRecyclerview.setLayoutManager
-                                (new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.HORIZONTAL,false));
-                        actorsAdapter=new ActorsAdapter(getApplicationContext(),actorsList);
-                       binding.castRecyclerview.setAdapter(actorsAdapter);
-                       actorsAdapter.notifyDataSetChanged();
-                       binding.castRecyclerview.scheduleLayoutAnimation();
-            }
+            public void onChanged(List<ActorModel> list) {
 
-            @Override
-            public void onFailure(Call<ActorModel> call, Throwable t) {
+                if (list!=null){
+
+                    binding.animProgress.setVisibility(View.GONE);
+                    binding.castRecyclerview.setLayoutManager
+                            (new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.HORIZONTAL,false));
+                    actorsAdapter=new ActorsAdapter(getApplicationContext(),list);
+                    binding.castRecyclerview.setAdapter(actorsAdapter);
+                    actorsAdapter.notifyDataSetChanged();
+                    binding.castRecyclerview.scheduleLayoutAnimation();
+                }
 
             }
         });
@@ -291,11 +273,11 @@ public class MovieDetailActivity extends AppCompatActivity {
             s=s.substring(0, s.indexOf("/"));
         }
 
-        movieViewModel.getSimilarMovie(s);
-        movieViewModel.getSimilarMovieMutableLiveData().observe(this, new Observer<List<MovieModel>>() {
+        viewModel.getSimilarMovie(s).observe(this, new Observer<List<MovieModel>>() {
             @Override
             public void onChanged(List<MovieModel> list) {
-                if (list.size()>0){
+                if (list!=null){
+
                     binding.similarMovieRecyclerview.setLayoutManager
                             (new LinearLayoutManager(getApplicationContext(),
                                     LinearLayoutManager.HORIZONTAL,false));
@@ -327,10 +309,10 @@ public class MovieDetailActivity extends AppCompatActivity {
                     binding.similarMovieRecyclerview.setAdapter(movieByGenreAdapter);
                     movieByGenreAdapter.notifyDataSetChanged();
                     binding.similarMovieRecyclerview.scheduleLayoutAnimation();
+
                 }
             }
         });
-
     }
 
     public void Favorite(){
@@ -355,16 +337,19 @@ public class MovieDetailActivity extends AppCompatActivity {
                 favorites.movie_preview=bundle.getString("movie_preview");
                 favorites.description=bundle.getString("description");
 
-                if (appDatabase.dao().isFavorite(Integer.parseInt(bundle.getString("id")))!=1){
 
-                    favoriteViewModel.insertItem(favorites);
+
+                int favoriteId=Integer.parseInt(bundle.getString("id"));
+                if (!viewModel.isFavorite(favoriteId)){
+
+                    viewModel.insertItem(favorites);
                     binding.imgFavorite.setImageResource(R.drawable.ic_baseline_bookmark_24);
                     Methods.showSnackBar(MovieDetailActivity.this,getResources().
                             getString(R.string.movie_added),getResources().getColor(R.color.green));
                 }else {
 
 
-                    favoriteViewModel.deleteItem(favorites);
+                    viewModel.deleteItem(favorites);
                     binding.imgFavorite.setImageResource(R.drawable.ic_baseline_bookmark_border_24);
                     Methods.showSnackBar(MovieDetailActivity.this,getResources().
                             getString(R.string.movie_removed),getResources().getColor(R.color.green));
@@ -377,7 +362,8 @@ public class MovieDetailActivity extends AppCompatActivity {
     }
 
     private void checkFavorite(){
-        if (appDatabase.dao().isFavorite(Integer.parseInt(bundle.getString("id")))!=1){
+        int favoriteId=Integer.parseInt(bundle.getString("id"));
+        if (!viewModel.isFavorite(favoriteId)){
             binding.imgFavorite.setImageResource(R.drawable.ic_baseline_bookmark_border_24);
         }else {
             binding.imgFavorite.setImageResource(R.drawable.ic_baseline_bookmark_24);
@@ -388,13 +374,11 @@ public class MovieDetailActivity extends AppCompatActivity {
 
     private void getComment(){
 
-        commentViewModel.getComment(bundle.getString("id"));
-        commentViewModel.getCommentMutableLiveData().observe(MovieDetailActivity.this, new Observer<List<CommentModel>>() {
+        viewModel.getComment(bundle.getString("id")).observe(this, new Observer<List<CommentModel>>() {
             @Override
             public void onChanged(List<CommentModel> list) {
-                if (list==null){
+                if (list!=null){
 
-                }else {
                     if (list.size()>0){
 
                         if (list.size()>10){
@@ -416,6 +400,7 @@ public class MovieDetailActivity extends AppCompatActivity {
                         binding.commentRecyclerview.setVisibility(View.GONE);
                         binding.tvMoreComment.setVisibility(View.GONE);
                     }
+
                 }
             }
         });
